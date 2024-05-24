@@ -16,20 +16,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\IntegrationEvents\Booking.Accomodation.IntegrationEvents\Booking.Accomodation.IntegrationEvents.csproj" />
+    <ProjectReference Include="..\..\IntegrationEvents\Booking.Commerce.IntegrationEvents\Booking.Commerce.IntegrationEvents.csproj" />
+    <ProjectReference Include="..\..\IntegrationEvents\Booking.UserAccess.IntegrationEvents\Booking.UserAccess.IntegrationEvents.csproj" />
     <ProjectReference Include="..\..\Modules\Accomodation\Booking.Accomodation.Application\Booking.Accomodation.Application.csproj" />
     <ProjectReference Include="..\..\Modules\Accomodation\Booking.Accomodation.Domain\Booking.Accomodation.Domain.csproj" />
     <ProjectReference Include="..\..\Modules\Accomodation\Booking.Accomodation.Infrastructure\Booking.Accomodation.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Modules\Accomodation\Booking.Accomodation.IntegrationEvents\Booking.Accomodation.IntegrationEvents.csproj" />
     <ProjectReference Include="..\..\Modules\Accomodation\Booking.Accomodation.Presentation\Booking.Accomodation.Presentation.csproj" />
     <ProjectReference Include="..\..\Modules\Commerce\Booking.Commerce.Application\Booking.Commerce.Application.csproj" />
     <ProjectReference Include="..\..\Modules\Commerce\Booking.Commerce.Domain\Booking.Commerce.Domain.csproj" />
     <ProjectReference Include="..\..\Modules\Commerce\Booking.Commerce.Infrastructure\Booking.Commerce.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Modules\Commerce\Booking.Commerce.IntegrationEvents\Booking.Commerce.IntegrationEvents.csproj" />
     <ProjectReference Include="..\..\Modules\Commerce\Booking.Commerce.Presentation\Booking.Commerce.Presentation.csproj" />
     <ProjectReference Include="..\..\Modules\UserAccess\Booking.UserAccess.Application\Booking.UserAccess.Application.csproj" />
     <ProjectReference Include="..\..\Modules\UserAccess\Booking.UserAccess.Domain\Booking.UserAccess.Domain.csproj" />
     <ProjectReference Include="..\..\Modules\UserAccess\Booking.UserAccess.Infrastructure\Booking.UserAccess.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Modules\UserAccess\Booking.UserAccess.IntegrationEvents\Booking.UserAccess.IntegrationEvents.csproj" />
     <ProjectReference Include="..\..\Modules\UserAccess\Booking.UserAccess.Presentation\Booking.UserAccess.Presentation.csproj" />
   </ItemGroup>
 
