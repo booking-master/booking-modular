@@ -1,3 +1,6 @@
 [submodule "src/Booking/BuildingBlocks"]
 	path = src/Booking/BuildingBlocks
 	url = https://github.com/booking-master/building-blocks
+[submodule "src/Booking/IntegrationEvents"]
+	path = src/Booking/IntegrationEvents
+	url = https://github.com/booking-master/booking-integration-events
