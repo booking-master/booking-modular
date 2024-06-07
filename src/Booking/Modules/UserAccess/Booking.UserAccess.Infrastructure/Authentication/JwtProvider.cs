@@ -13,17 +13,32 @@ namespace Booking.UserAccess.Infrastructure.Authentication
     {
         private JwtOptions _jwtOptions;
 
-        public JwtProvider(IOptions<JwtOptions> options) 
+        public JwtProvider(IOptions<JwtOptions> options)
         {
             _jwtOptions = options.Value;
         }
         public string Generate(User user)
         {
-            Claim[] claims = new Claim[]
+            List<Claim> claims = new List<Claim>()
             {
                 new Claim(JwtRegisteredClaimNames.Sub,user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email,user.Email)
             };
+
+            foreach (var role in user.Roles)
+            {
+                claims.Add(
+                    new Claim(ClaimTypes.Role, role.Name));
+            }
+
+
+            var permisions = user.Roles.SelectMany(x => x.Permissions);
+
+            foreach (var permission in permisions)
+            {
+                claims.Add(
+                    new Claim("permission", permission.Name));
+            }
 
             SigningCredentials signingCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey)),
@@ -39,7 +54,7 @@ namespace Booking.UserAccess.Infrastructure.Authentication
                 signingCredentials
             );
 
-            string tokenContent=new JwtSecurityTokenHandler().WriteToken(token);
+            string tokenContent = new JwtSecurityTokenHandler().WriteToken(token);
 
             return tokenContent;
         }

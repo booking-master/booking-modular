@@ -1,5 +1,4 @@
 ﻿using Booking.BuildingBlocks.Domain;
-using Booking.BuildingBlocks.Domain.Enums;
 using Booking.BuildingBlocks.Domain.SharedKernel.ValueObjects;
 using Booking.BuildingBlocks.Presentation;
 using Booking.UserAccess.Application.Features.Login;
@@ -49,10 +48,8 @@ namespace Booking.UserAccess.Presentation
         }
 
         [HttpPut("")]
-        [HasPermission(Permission.ChangeUserInfo)]
         public async Task<IActionResult> UpdateUserInfo([FromBody] UpdateUserInfoRequest request, CancellationToken cancellationToken)
         {
-
             UpdateUserInfoCommand command = new UpdateUserInfoCommand(request.Id, request.FirstName, request.LastName,
                 request.Email, request.Phone, Address.Create(request.Street, request.City, request.Country).Value,
                 request.PreviousPassword, request.NewPassword);
