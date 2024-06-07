@@ -18,7 +18,15 @@ namespace Booking.UserAccess.Infrastructure.Database.Configuration
                 Create(Role.Host, Permission.HostAccommodationOperations),
                 Create(Role.Host, Permission.ChangeUserInfo),
                 Create(Role.Guest, Permission.ChangeUserInfo),
-                Create(Role.Guest, Permission.GuestReservationOperations));
+                Create(Role.Guest, Permission.GuestReservationOperations),
+                Create(Role.Guest, Permission.InvoicesOperations),
+                Create(Role.Host, Permission.InvoicesOperations),
+                Create(Role.Host, Permission.SubscriptionOperations),
+                Create(Role.Guest, Permission.GuestReservationPayment),
+                Create(Role.Host, Permission.HostReservationPayment),
+                Create(Role.Host, Permission.ReservationOperations),
+                Create(Role.Guest, Permission.ReservationOperations),
+                Create(Role.Guest, Permission.CreateReview));
         }
 
         private RolePermission Create(Role role, Permission permission)
