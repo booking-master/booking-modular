@@ -41,8 +41,16 @@ builder.Services.ConfigureOptions<MassTransitHostOptionsSetup>()
         Booking.UserAccess.Infrastructure.AssemblyReference.Assembly,
     ]);
     x.SetKebabCaseEndpointNameFormatter();
-    x.SetKebabCaseEndpointNameFormatter();
-    x.UsingInMemory((context, configurator) => configurator.ConfigureEndpoints(context));
+    x.UsingRabbitMq((context, configurator) =>
+    {
+        configurator.Host(new Uri("rabbitmq://localhost/"), h =>
+        {
+            h.Username("user");
+            h.Password("password");
+        });
+
+        configurator.ConfigureEndpoints(context);
+    });
 });
 
 var app = builder.Build();
